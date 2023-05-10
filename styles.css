@@ -1,42 +1,44 @@
 *{
-    background: #8B0000;
-    font-family: 'AnArChY', sans-serif;
+    background: #003062;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 400; 
     font-size: 32px;
     line-height: 150%;             
 }
 header{
-    background: #000000;
+    background: linear-gradient(to top, #000000, #003062);
 }
 .logo{
     padding-top:0px;
     margin-left:10px;
     width:10%;
+    mix-blend-mode: screen;
 }
+
 main{
     display:flex;
     margin-bottom: 50px;
     margin-left: 80px;
 }
-.text-area{   
-    color:#ffffff;    
-border:none;              
+.text-area{    
+    border:2px solid #ff184c;              
     margin-top:90px;
     text-transform: lowercase;
     resize: none;
-
+    background: #005078; 
 }
-::placeholder{ color:#ffffff;
+::placeholder{ color:#05d9e8;
 }
 .text-area:focus{
     outline: none;
+    color:#05d9e8;
 }
 
 .mensaje{
     background: #000000;
     background-image: url("/img/pexels-pixabay-414860.jpg");
     background-repeat: no-repeat;
-    border: none;
+    border:2px solid #ff184c;              
     border-radius: 24px;
     color: #ffffff;
     margin-left: 98px;
@@ -49,37 +51,45 @@ border:none;
     outline: none;
 }
 .informacion{
-    color: #ffffff;
+    color:#05d9e8;
     font-size: 18px;
 }
 .botones{
     display: flex;
     margin-top: 18px;
 }
-.btn-desencriptar{
-    background: #03004D; 
+.btn-encriptar{
+    background: #005078; 
     border: 1px solid;
     border-radius: 24px;
-    color: #ffffff;
+    color: #ff184c;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+}
+.btn-encriptar:hover {
+    background: #03004D;
+  }
+  .btn-desencriptar:hover{
+    background: #03004D
+  }
+  .copiar:hover{
+    background: #03004D;
+  }
+.btn-desencriptar{
+    background: #005078; 
+    border: 1px solid;
+    border-radius: 24px;
+    color: #ff184c;
     cursor: pointer;
     height: 67px;
     margin-left: 30px;
     width: 328px;
 }
-.btn-encriptar{
-    background: #03004D; 
-    border: 1px solid;
-    border-radius: 24px;
-    color: #ffffff;
-    cursor: pointer;
-    height: 67px;
-    width: 328px;
-}
-
 .copiar{
-    background: #03004D; 
+    background: #005078; 
     border: 1px solid;
-    color: #ffffff;
+    color: #ff184c;
     border-radius: 24px;
     cursor:pointer;
     height: 67px;
@@ -89,10 +99,10 @@ border:none;
     width: 336px;
 }
 footer {
-    background: #000000;
+    background: linear-gradient(to bottom, #000000, #003062);
     color: #ffffff;
     width: 100%;
-    height: 210px;
+    height: 219px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +112,7 @@ footer {
     margin:auto;
     font-weight: bold;
     font-size: 18px;
-    background: #000000;
+    background: none;
     margin-top: 35px;
     margin-bottom: 20px;
   }
