@@ -1,5 +1,4 @@
 *{
-    background: #003062;
     font-family: 'Orbitron', sans-serif;
     font-weight: 400; 
     font-size: 32px;
@@ -14,13 +13,15 @@ header{
     width:10%;
     mix-blend-mode: screen;
 }
-
+body{
+    background: linear-gradient(#000000, #000000 20%, #003062 50%, #000000 80%, #000000);
+}
 main{
     display:flex;
-    margin-bottom: 50px;
-    margin-left: 80px;
 }
-.text-area{    
+.text-area{       
+    margin-bottom: 50px;
+    margin-left: 50%;
     border:2px solid #ff184c;              
     margin-top:90px;
     text-transform: lowercase;
@@ -35,26 +36,34 @@ main{
 }
 
 .mensaje{
+    box-sizing: border-box;
     background: #000000;
     background-image: url("/img/pexels-pixabay-414860.jpg");
+    background-position: 50%;
     background-repeat: no-repeat;
     border:2px solid #ff184c;              
     border-radius: 24px;
     color: #ffffff;
-    margin-left: 98px;
-    margin-top: 20px;
+    margin-left: 30%;
+    margin-top: 90px;
     padding-left: 20px;
     position: fixed;
     resize: none;
+    width: 400px;
+    height: 684px;
 }
+
 .mensaje:focus{
     outline: none;
+    color:#05d9e8;
 }
 .informacion{
+    margin-left: 50%;
     color:#05d9e8;
     font-size: 18px;
 }
 .botones{
+    margin-left: 50%;
     display: flex;
     margin-top: 18px;
 }
@@ -93,8 +102,8 @@ main{
     border-radius: 24px;
     cursor:pointer;
     height: 67px;
-    margin-left: 108px;
-    margin-top: 402px;
+    margin-left: 31%;
+    margin-top: 622px;
     position: fixed;
     width: 336px;
 }
@@ -123,6 +132,26 @@ footer {
    font-size: 30px;
    margin-top: auto;
   }
+  /*colores de logos de los iconos*/
   .fa-brands{
     background: #000000;
+    mix-blend-mode: screen;
+  }
+  .fa-github{
+    color: #ffffff;
+  } 
+  .fa-facebook{
+    color:#3b5998;
+  }
+  .fa-linkedin{
+    color:#0077b5;
+  }
+  .fa-twitter{
+    color:#55acee;
+  }
+  .fa-instagram{
+    color:#3f729b;
+  }
+  .fa-whatsapp{
+    color:#25d366;
   }
