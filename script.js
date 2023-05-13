@@ -43,9 +43,19 @@ function desencriptar(stringDesencriptado){
     }
     return stringDesencriptado
 }
-
+function btnCopiar() {
+    const mensaje = document.querySelector(".mensaje");
  
-
-
+    mensaje.select();
+  
+    // Copia el texto al portapapeles usando la API Clipboard
+    navigator.clipboard.writeText(mensaje.value)
+      .then(() => {
+        console.log("Texto copiado al portapapeles");
+      })
+      .catch((error) => {
+        console.error("Error al copiar el texto al portapapeles:", error);
+      });
+  }
 
 
