@@ -165,3 +165,36 @@ footer {
   .fa-whatsapp{
     color:#25d366;
   }
+
+  #modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+    color:#05d9e8;
+    text-align: center;
+  }
+  
+  .spam-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .show-spam {
+    animation: fadeOut 2s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
