@@ -48,7 +48,7 @@ main{
 .mensaje{
     box-sizing: border-box;
     background: #000000;
-    background-image: url("img/pexels-pixabay-414860.jpg");
+    background-image: url("pexels-pixabay-414860.jpg");
     background-position: 50%;
     background-repeat: no-repeat;
     border:2px solid #ff184c;              
