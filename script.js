@@ -1,27 +1,32 @@
-const textArea= document.querySelector(".text-area");
-const mensaje= document.querySelector(".mensaje");
+const textArea = document.querySelector(".text-area");
+const mensaje = document.querySelector(".mensaje");
 
-/*La letra "e" es convertidad para "enter"
-  La letra "i" es convertidad para "imes"
-  La letra "a" es convertidad para "ai"
-  La letra "o" es convertidad para "ober"
-  La letra "u" es convertidad para "ufat"*/
-function btnEncriptar(){
-    const textoEncriptado =encriptar(textArea.value)
-    mensaje.value = textoEncriptado
-    textArea.value ="";
-    mensaje.style.backgroundImage ="none";
+/*La letra "e" es convertida para "enter"
+  La letra "i" es convertida para "imes"
+  La letra "a" es convertida para "ai"
+  La letra "o" es convertida para "ober"
+  La letra "u" es convertida para "ufat"*/
+function btnEncriptar() {
+  const textoEncriptado = encriptar(textArea.value);
+  mensaje.value = textoEncriptado;
+  textArea.value = "";
+  mensaje.style.backgroundImage = "none";
 }
 
-function btnDesencriptar(){
-    const textoEncriptado =desencriptar(textArea.value)
-    mensaje.value = textoEncriptado
-    textArea.value ="";
-    
+function btnDesencriptar() {
+  const textoEncriptado = desencriptar(textArea.value);
+  mensaje.value = textoEncriptado;
+  textArea.value = "";
 }
 
 function encriptar(stringEncriptado) {
-  let codigoMatriz = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+  let codigoMatriz = [
+    ["e", "enter"],
+    ["i", "imes"],
+    ["a", "ai"],
+    ["o", "ober"],
+    ["u", "ufat"]
+  ];
   stringEncriptado = stringEncriptado.toLowerCase();
 
   if (stringEncriptado.trim() === "") {
@@ -31,14 +36,23 @@ function encriptar(stringEncriptado) {
 
   for (let i = 0; i < codigoMatriz.length; i++) {
     if (stringEncriptado.includes(codigoMatriz[i][0])) {
-      stringEncriptado = stringEncriptado.replaceAll(codigoMatriz[i][0], codigoMatriz[i][1]);
+      stringEncriptado = stringEncriptado.replaceAll(
+        codigoMatriz[i][0],
+        codigoMatriz[i][1]
+      );
     }
   }
   return stringEncriptado;
 }
 
 function desencriptar(stringDesencriptado) {
-  let codigoMatriz = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+  let codigoMatriz = [
+    ["e", "enter"],
+    ["i", "imes"],
+    ["a", "ai"],
+    ["o", "ober"],
+    ["u", "ufat"]
+  ];
   stringDesencriptado = stringDesencriptado.toLowerCase();
 
   if (stringDesencriptado.trim() === "") {
@@ -48,7 +62,10 @@ function desencriptar(stringDesencriptado) {
 
   for (let i = 0; i < codigoMatriz.length; i++) {
     if (stringDesencriptado.includes(codigoMatriz[i][1])) {
-      stringDesencriptado = stringDesencriptado.replaceAll(codigoMatriz[i][1], codigoMatriz[i][0]);
+      stringDesencriptado = stringDesencriptado.replaceAll(
+        codigoMatriz[i][1],
+        codigoMatriz[i][0]
+      );
     }
   }
   return stringDesencriptado;
@@ -63,14 +80,20 @@ function btnCopiar() {
     return;
   }
 
-  // Copiar el texto al portapapeles usando la API Clipboard
-  navigator.clipboard.writeText(mensaje.value)
-    .then(() => {
-      showSpam();
-    })
-    .catch((error) => {
-      console.error("Error al copiar el texto al portapapeles:", error);
-    });
+  // Copiar el texto al portapapeles utilizando la API Clipboard
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard
+      .writeText(mensaje.value)
+      .then(() => {
+        showSpam();
+      })
+      .catch((error) => {
+        console.error("Error al copiar el texto al portapapeles:", error);
+      });
+  } else {
+    // Utilizar una estrategia alternativa si la API Clipboard no está disponible
+    alert("La función de copiar al portapapeles no es compatible en este navegador");
+  }
 }
 
 function showSpam() {

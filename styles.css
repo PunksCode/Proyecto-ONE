@@ -76,6 +76,7 @@ main{
     margin-left: 50%;
     display: flex;
     margin-top: 18px;
+    width: 680px;
 }
 .btn-encriptar{
     background: #005078; 
