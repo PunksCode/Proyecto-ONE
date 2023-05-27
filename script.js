@@ -1,22 +1,39 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
+const modal = document.getElementById("modal");
+const spamMessage = document.getElementById("spamMessage");
 
+mensaje.readOnly = true; // Bloquear escritura en el campo de texto
 /*La letra "e" es convertida para "enter"
   La letra "i" es convertida para "imes"
   La letra "a" es convertida para "ai"
   La letra "o" es convertida para "ober"
   La letra "u" es convertida para "ufat"*/
+
+function verificarTexto(texto) {
+  if (/[A-ZÁÉÍÓÚáéíóú]/.test(texto)) {
+    alert("No se permiten letras mayúsculas ni acentos");
+    return false;
+  }
+  return true;
+}
+
 function btnEncriptar() {
   const textoEncriptado = encriptar(textArea.value);
-  mensaje.value = textoEncriptado;
-  textArea.value = "";
-  mensaje.style.backgroundImage = "none";
+  if (verificarTexto(textArea.value)) {
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
+  }
 }
 
 function btnDesencriptar() {
   const textoEncriptado = desencriptar(textArea.value);
-  mensaje.value = textoEncriptado;
-  textArea.value = "";
+  if (verificarTexto(textArea.value)) {
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.backgroundImage = "none";
+  }
 }
 
 function encriptar(stringEncriptado) {
@@ -72,8 +89,6 @@ function desencriptar(stringDesencriptado) {
 }
 
 function btnCopiar() {
-  const mensaje = document.querySelector(".mensaje");
-
   if (mensaje.value.trim() === "") {
     // No hay texto para copiar
     alert("No se ha encontrado texto para copiar");
@@ -97,9 +112,6 @@ function btnCopiar() {
 }
 
 function showSpam() {
-  const spamMessage = document.getElementById("spamMessage");
-  const modal = document.getElementById("modal");
-
   spamMessage.textContent = "¡Texto copiado al portapapeles!";
   modal.style.display = "block";
   modal.classList.add("show-spam");

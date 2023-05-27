@@ -4,10 +4,16 @@
     font-size: 32px;
     line-height: 150%;             
 }
-header{
-    background: linear-gradient(to top, #000000, #003062);
-    display: flex;
-    flex-direction: row;
+body{
+  background: linear-gradient(#000000, #000000 20%, #003062 50%, #000000 80%, #000000);
+  width: 100%;
+  height: 100%;
+}
+header {
+  background: linear-gradient(to top, #000000, #003062);
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 .logo{
     padding-top:0px;
@@ -23,18 +29,17 @@ h1{
   font-family: 'Orbitron', sans-serif;
 
 }
-body{
-    background: linear-gradient(#000000, #000000 20%, #003062 50%, #000000 80%, #000000);
-}
+
 main{
     display:flex;
-}
+    flex-direction: row;
+  }
+    
 .text-area{       
     margin-bottom: 50px;
-    margin-left: 50%;
+    margin-left: 240px;
     border:2px solid #ff184c;              
     margin-top:90px;
-    text-transform: lowercase;
     resize: none;
     background: #005078; 
 }
@@ -54,10 +59,10 @@ main{
     border:2px solid #ff184c;              
     border-radius: 24px;
     color: #ffffff;
-    margin-left: 30%;
+    margin-left:180px;
     margin-top: 90px;
     padding-left: 20px;
-    position: fixed;
+    position: absolute;
     resize: none;
     width: 400px;
     height: 684px;
@@ -68,15 +73,15 @@ main{
     color:#05d9e8;
 }
 .informacion{
-    margin-left: 50%;
+    margin-left: 240px;
     color:#05d9e8;
     font-size: 18px;
 }
 .botones{
-    margin-left: 50%;
     display: flex;
     margin-top: 18px;
     width: 680px;
+    margin-left:240px;
 }
 .btn-encriptar{
     background: #005078; 
@@ -86,15 +91,20 @@ main{
     cursor: pointer;
     height: 67px;
     width: 328px;
+    margin-right: 30px;
+    transition: 1s all;
 }
 .btn-encriptar:hover {
     background: #03004D;
+    transform: scale(1.1);
   }
   .btn-desencriptar:hover{
-    background: #03004D
+    background: #03004D;
+    transform: scale(1.1);
   }
   .copiar:hover{
     background: #03004D;
+    transform: scale(1.1);
   }
 .btn-desencriptar{
     background: #005078; 
@@ -103,8 +113,8 @@ main{
     color: #ff184c;
     cursor: pointer;
     height: 67px;
-    margin-left: 30px;
     width: 328px;
+    transition: 1s all;
 }
 .copiar{
     background: #005078; 
@@ -113,10 +123,11 @@ main{
     border-radius: 24px;
     cursor:pointer;
     height: 67px;
-    margin-left: 31%;
-    margin-top: 622px;
-    position: fixed;
+    margin-left:215px;
+    margin-top: 675px;
+    position: absolute;
     width: 336px;
+    transition: 1s all;
 }
 footer {
     background: linear-gradient(to bottom, #000000, #003062);
@@ -142,17 +153,18 @@ footer {
    margin-bottom: 20px;
    font-size: 30px;
    margin-top: auto;
+   mix-blend-mode: screen;
+
   }
   /*colores de logos de los iconos*/
   .fa-brands{
-    background: #000000;
     mix-blend-mode: screen;
   }
   .fa-github{
     color: #ffffff;
   } 
   .fa-facebook{
-    color:#3b5998;
+    color:#0e4ac5;
   }
   .fa-linkedin{
     color:#0077b5;
@@ -161,7 +173,7 @@ footer {
     color:#55acee;
   }
   .fa-instagram{
-    color:#3f729b;
+    color:#c92bb7;
   }
   .fa-whatsapp{
     color:#25d366;
@@ -199,74 +211,3 @@ footer {
       display: none;
     }
   }
-
-/* Estilos generales para tablet */
-@media (max-width: 768px) and (max-height: 1164px)  {
-  header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  
-  .logo {
-    padding-top: 0px;
-    margin-left: 10px;
-    width: 10%;
-    mix-blend-mode: screen;
-  }
-  
-  h1 {
-    font-size: 60px;
-    margin: auto 20px;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .text-area {
-    margin: 60px auto 0;
-    resize: none;
-    width: 550px;
-    display: flex;
-    align-items: center;
-  }
-  .mensaje {
-    background-position: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    resize: none;
-    width: 550px;
-    height: 584px;
-    margin: 60px auto 0 auto;
-  }
-  
-  .informacion {
-    margin: 0 auto;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  
-  .botones {
-    display: flex;
-    margin:0 auto;
-    width: 550px;
-  }
-  
-  footer {
-    width: 100%;
-    height: 219px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-  }
-    
-}
-.copyright{
-  margin: auto;
-}
